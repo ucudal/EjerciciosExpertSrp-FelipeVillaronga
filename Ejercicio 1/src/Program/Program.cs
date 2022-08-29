@@ -9,9 +9,9 @@ namespace SRP
         {
             Book book1 = new Book("Design Patterns","Erich Gamma & Others","001-034");
             Book book2 = new Book("Pro C#","Troelsen","001-035");
-            book1.ShelveBook("A","7");
-            book2.ShelveBook("B","3");
-
+            ShelveBook shelve1= new ShelveBook (book1, "A","7"); 
+            ShelveBook shelve1= new ShelveBook (book2, "B","3");
         }
     }
+    //Tras haber creado una nueva clase para la estantería, se deben crear nuevas estancias para cada "lugar", y asociar cada lugar al libro que le corresponda
 }
