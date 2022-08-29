@@ -1,8 +1,9 @@
-﻿using System;
+using System;
+using SRP;
 
 namespace SRP
 {
-
+    
     class Program
     {
         static void Main()
@@ -12,7 +13,6 @@ namespace SRP
             ShelveBook shelve1= new ShelveBook (book1, "A","7"); 
             ShelveBook shelve2= new ShelveBook (book2, "B","3");
         }
+    
     }
-    //Tras haber creado una nueva clase para la estantería, se deben crear nuevas estancias para cada "lugar", y asociar cada lugar al libro que le corresponda
-    //Para ello tambien fue necesario modificar el Libro.cs para que pida como parametro las instancias book creadas.
 }
