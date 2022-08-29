@@ -33,7 +33,7 @@ namespace SRP
         public string LibrarySector { get ; set; }
         public string LibraryShelve { get ; set; }
         
-        public void ShelveBook(String sector, String shelve)
+        public void ShelveBook(Book book, String sector, String shelve)
         {
             this.book = book;
             this.LibrarySector = sector;
