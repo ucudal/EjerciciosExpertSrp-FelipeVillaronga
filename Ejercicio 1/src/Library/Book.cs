@@ -11,9 +11,14 @@ namespace SRP
             this.Code = code;
         }
 
-        public string Title { get ; }
-        public string Author { get ; }
-        public string Code { get ; }
+        public string Title { get ; set; }
+        public string Author { get ; set; }
+        public string Code { get ; set; }
+        
+        public string BookPrinter ()
+        {
+            return $"Libro: "\{Title}\" ({Author}, Código: {Code}).";
+        }
         
       /*public string LibrarySector { get ; set; }
         public string LibraryShelve { get ; set; }
