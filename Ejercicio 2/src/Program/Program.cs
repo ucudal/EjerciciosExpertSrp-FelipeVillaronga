@@ -7,11 +7,18 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            string appointmentResult = AppointmentService.CreateAppointment("Steven Jhonson", "986782342", "5555-555-555", DateTime.Now, "Wall Street", "Armand");
-            Console.WriteLine(appointmentResult);
-
-            string appointmentResult2 = AppointmentService.CreateAppointment("Ralf Manson", "", "5555-555-555", DateTime.Now, "Queen Street", "");
-            Console.WriteLine(appointmentResult2);
+            UserData userData = new UserData("Steven Jhonson", "986782342", "5555-555-555");
+            ServiceData serviceData = new ServiceData("Armand", "Surgeon", DateTime.Now, "Wall Street");
+            if (userData.IsValid1() && serviceData.IsValid2())
+            {
+                AppointmentSchedule appointmentSchedule1 = new AppointmentSchedule(userData, serviceData);
+            }
+            UserData userData2 = new UserData("Ralf Manson", "", "5555-555-555");
+            ServiceData serviceData2 = new ServiceData("", "Queen Street", DateTime.Now, "");
+            if (userData2.IsValid1() && serviceData2.IsValid2())
+            {
+                AppointmentSchedule appointmentSchedule2 = new AppointmentSchedule(userData2, serviceData2);
+            }
         }
     }
 }

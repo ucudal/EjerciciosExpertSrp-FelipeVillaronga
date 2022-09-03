@@ -1,21 +1,33 @@
 using System;
+using System.Collections.Generic;
 
 namespace SRP;
    public class ShelveBook
     {
-        public string LibrarySector { get ; }
-        public string LibraryShelve { get ;  }
-        public  ShelveBook(String sector, String shelve)
+        public string LibrarySector { get ; set; }
+        public string LibraryShelve { get ; set;  }
+        public ShelveBook(string LibrarySector, string LibraryShelve)
         {
-            this.LibrarySector = sector;
-            this.LibraryShelve = shelve;
+            this.LibrarySector = LibrarySector;
+            this.LibraryShelve = LibraryShelve;
         }
-        
-        public string Printer2()
+
+        public List <string> bookLocationData= new List<string> ();
+        public void BookLocationList()
         {
-            return $"Sector: {LibrarySector}. \nEstanteria: {LibraryShelve}.";
+            bookLocationData.Add(LibrarySector);
+            bookLocationData.Add(LibraryShelve);
+        }
+        public void shelvePrinter()
+        {
+            Console.WriteLine($"Sector: {LibrarySector}. \nEstanteria: {LibraryShelve}.");
         }
         
     }
-    // La clase Book, tenía dos constructores, y una clase puede tener un único método de clase. Asimismo, de surgir la necesidad de modificar el metodo ShelveBook (crear una nueva variable "edificio" o "departamento") se crearia una segunda razon para modificar la clase Book; lo cual contradice el principio SRP.
-    //Por ello es necesario crear una nueva clase -ShelveBook- en la cual, ahora sí, crear un método constructor para los atributos LibrarySector y LibraryShelve
+    /*De surgir la necesidad de modificar el metodo ShelveBook, 
+    a modo de ejemplo, crear una nueva variable "edificio" o "departamento", 
+    se crearia una segunda razon para modificar la clase Book; lo cual contradice el principio SRP.
+    Por ello es necesario crear una nueva clase -ShelveBook- en la cual, ahora sí, 
+    definir las variables LibrarySector y LibraryShelve; fijando en esta, como única responsabilidad, 
+    conocer y definir las ubicaciones de los libros.
+    */

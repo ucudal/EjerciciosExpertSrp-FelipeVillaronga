@@ -1,15 +1,17 @@
 using System;
+using SRP;
+using System.Collections.Generic;
 
 namespace SRP;
-
-class BookAndShelve
+public class BookAndShelve
 {
-  private Book book;
-  private ShelveBook shelve;
-  
-  public BookAndShelve()
+  private static ShelveBook shelve1, shelve2;
+  private static Book book1, book2;
+  public Dictionary<List<string>,List<string>> BooksWithShelves {get; set;}
+  public BookAndShelve(Dictionary<List<string>,List<string>> BooksWithShelves)
   {
-    this.book= book;
-    this.shelve= shelve;
+    this.BooksWithShelves= BooksWithShelves;
   }
 }
+  
+
